@@ -63,8 +63,16 @@
     .CodeBlock {
       background-color: #F5F5F5;
       margin: 10px 15px 10px 0;
-      display: inline-block
+      display: inline-block;
+
+      width: 100%; /* Asegura que ocupe todo el ancho disponible */
+      max-width: 100%; /* No excederá el contenedor */
+      padding: 10px;
+      box-sizing: border-box; /* Incluye padding y borde en el cálculo del ancho */
+      overflow: auto; /* Muestra una barra de desplazamiento si el contenido es más grande */
+      min-height: auto; /* Ajusta la altura según sea necesario, o usa min-height para un tamaño dinámico */
     }
+
 
     .S2 {
       border-left: 1px solid rgb(217, 217, 217);
@@ -94,6 +102,7 @@
       color: rgb(33, 33, 33);
       font-family: Menlo, Monaco, Consolas, "Courier New", monospace, Menlo, Monaco, Consolas, "Courier New", monospace;
       font-size: 14px;
+      
     }
 
     .S4 {
@@ -150,7 +159,7 @@
       background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;
       font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
       font-size: 14px;
-      overflow-x: hidden;
+      overflow-x: auto;
       line-height: 17.234px;
     }
 
@@ -167,6 +176,9 @@
       font-weight: 700;
       text-align: left;
     }
+
+    
+
   </style>
 
 </head>
@@ -186,7 +198,7 @@
     </div>
   </header>
 
-  <nav class="navigation" id="navigation"><img src="" class="mb-4 d-xl-none" alt="logo" /></nav>
+  <nav class="navigation" id="navigation"></nav>
 
   <div class="nav-overlay d-xl-none"></div>
 
@@ -257,7 +269,7 @@
                     <div class="rtcContent ">
                       <h1 class='S0'><span>Señal Amortiguada</span></h1>
                       <div class='S1'><span>En este ejemplo, vamos a explorar una señal amortiguada. Este tipo de señal se utiliza en sistemas donde es importante observar cómo las oscilaciones se reducen con el tiempo, como en sistemas mecánicos o eléctricos.</span></div>
-                      <div class="CodeBlock">
+                      <div class="CodeBlock col-12">
                         <div class="inlineWrapper">
                           <div class='S2'><span style="white-space: pre"><span style="color: #008013;">% La fórmula que define la señal es:</span></span></div>
                         </div>
@@ -273,10 +285,10 @@
                           </div>
                         </div>
                         <div class="inlineWrapper">
-                          <div class='S3'><span style="white-space: pre"><span style="color: #008013;">% donde la función seno representa las oscilaciones y el término exponencial</span></span></div>
+                          <div class='S3'><span style="white-space: pre"><span style="color: #008013;">% donde la función seno representa las oscilaciones</span></span></div>
                         </div>
                         <div class="inlineWrapper">
-                          <div class='S4'><span style="white-space: pre"><span style="color: #008013;">% representa la amortiguación.</span></span></div>
+                          <div class='S3'><span style="white-space: pre"><span style="color: #008013;">% y el término exponencial la amortiguación.</span></span></div>
                         </div>
                       </div>
                       <h2 class='S5'><span>Código para Generar la Señal</span></h2>
@@ -315,8 +327,8 @@
                         </div>
                         <div class="inlineWrapper outputs">
                           <div class='S6'><span style="white-space: pre"><span>title(</span><span
-                                style="color: #a709f5;">'Señal Amortiguada: y = sin(x) * exp(-0.4 * x)'</span><span>)</span></span></div>
-                          <div class='S7'>
+                                style="color: #a709f5;">'Señal Amortiguada: y=sin(x)*exp(-0.4*x)'</span><span>)</span></span></div>
+                          <div class='S7 row m-1'>
                             <div
                               class="inlineElement eoOutputWrapper disableDefaultGestureHandling embeddedOutputsFigure"
                               uid="FFD9550E" prevent-scroll="true" data-testid="output_0" tabindex="-1"
@@ -359,9 +371,9 @@
                     </a>
                     <div class="divider d-none d-md-block"></div>
                     <a href="../signal2/index.html"
-                      class="article-card right col-5">
+                      class="article-card right ">
                       <div class="">
-                        <i class="fa-solid fa-wave-square"></i>
+                        <i class="fa-solid fa-wave-square col-5"></i>
                         <h5 class="fw-medium">Señal Amortiguada Polar</h5>
                       </div>
                       <button>

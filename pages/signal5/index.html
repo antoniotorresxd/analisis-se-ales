@@ -76,8 +76,15 @@
         .CodeBlock {
             background-color: #F5F5F5;
             margin: 10px 15px 10px 0;
-            display: inline-block
-        }
+            display: inline-block;
+
+            width: 100%; /* Asegura que ocupe todo el ancho disponible */
+            max-width: 100%; /* No excederá el contenedor */
+            padding: 10px;
+            box-sizing: border-box; /* Incluye padding y borde en el cálculo del ancho */
+            overflow: auto; /* Muestra una barra de desplazamiento si el contenido es más grande */
+            min-height: auto; /* Ajusta la altura según sea necesario, o usa min-height para un tamaño dinámico */
+            }
 
         .S3 {
             border-left: 1px solid rgb(217, 217, 217);
@@ -139,18 +146,14 @@
         }
 
         .S7 {
-            margin: 3px 10px 5px 4px;
-            padding: 0px;
-            line-height: 25px;
-            min-height: 0px;
-            white-space: pre-wrap;
             color: rgb(33, 33, 33);
-            font-family: Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;
-            font-style: normal;
-            font-size: 20px;
-            font-weight: 700;
-            text-align: left;
-        }
+            padding: 10px 0px 6px 17px;
+            background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;
+            font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            line-height: 17.234px;
+            }
     </style>
 
 </head>
@@ -276,7 +279,7 @@
                                                 </div>
                                                 <div class="inlineWrapper outputs">
                                                     <div class='S5'><span style="white-space: pre"><span>plot(x, y); </span><span style="color: #008013;">% Trazado del contorno de la cara</span></span></div>
-                                                    <div class='S6'>
+                                                    <div class='S7 row m-1'>
                                                         <div class="inlineElement eoOutputWrapper disableDefaultGestureHandling embeddedOutputsFigure"
                                                             uid="8CFC5D3A" prevent-scroll="true" data-testid="output_0" tabindex="-1"
                                                             style="width: 1147px;">
@@ -310,7 +313,7 @@
                                                 </div>
                                                 <div class="inlineWrapper outputs">
                                                     <div class='S5'><span style="white-space: pre"><span style="color: #0e00ff;">end</span></span></div>
-                                                    <div class='S6'>
+                                                    <div class='S7 row m-1'>
                                                         <div class="inlineElement eoOutputWrapper disableDefaultGestureHandling embeddedOutputsFigure"
                                                             uid="468F5F74" prevent-scroll="true" data-testid="output_1" tabindex="-1"
                                                             style="width: 1147px;">
@@ -358,7 +361,7 @@
                                                 <div class="inlineWrapper outputs">
                                                     <div class='S5'><span style="white-space: pre"><span>hold </span><span
                                                                 style="color: #a709f5;">off</span><span>; </span><span style="color: #008013;">% Finalizar la figura</span></span></div>
-                                                    <div class='S6'>
+                                                    <div class='S7 row m-1'>
                                                         <div class="inlineElement eoOutputWrapper disableDefaultGestureHandling embeddedOutputsFigure"
                                                             uid="DFAB7035" prevent-scroll="true" data-testid="output_2" tabindex="-1"
                                                             style="width: 1147px;">
@@ -448,13 +451,13 @@
                                             </div>
                                         </a>
                                         <div class="divider d-none d-md-block"></div>
-                                        <a href="../signal5/index.html" class="article-card right col-5">
+                                        <a href="../signal5/index.html" class="article-card right">
                                             <div class="">
                                                 <i class="fa-solid fa-wave-square"></i>
                                                 <h5 class="fw-medium">-</h5>
                                             </div>
                                             <button>
-                                                <i class="fa-solid fa-arrow-right"></i>
+                                                <i class="fa-solid fa-arrow-right col-5"></i>
                                             </button>
                                         </a>
                                     </div>

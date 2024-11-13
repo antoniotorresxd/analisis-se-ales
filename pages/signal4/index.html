@@ -76,8 +76,15 @@
         .CodeBlock {
             background-color: #F5F5F5;
             margin: 10px 15px 10px 0;
-            display: inline-block
-        }
+            display: inline-block;
+
+            width: 100%; /* Asegura que ocupe todo el ancho disponible */
+            max-width: 100%; /* No excederá el contenedor */
+            padding: 10px;
+            box-sizing: border-box; /* Incluye padding y borde en el cálculo del ancho */
+            overflow: auto; /* Muestra una barra de desplazamiento si el contenido es más grande */
+            min-height: auto; /* Ajusta la altura según sea necesario, o usa min-height para un tamaño dinámico */
+            }
 
         .S3 {
             border-left: 1px solid rgb(217, 217, 217);
@@ -139,19 +146,14 @@
         }
 
         .S7 {
-            border-left: 1px solid rgb(217, 217, 217);
-            border-right: 1px solid rgb(217, 217, 217);
-            border-top: 0px none rgb(33, 33, 33);
-            border-bottom: 1px solid rgb(217, 217, 217);
-            border-radius: 0px 0px 4px 4px;
-            padding: 0px 45px 4px 13px;
-            line-height: 18.004px;
-            min-height: 0px;
-            white-space: nowrap;
             color: rgb(33, 33, 33);
-            font-family: Menlo, Monaco, Consolas, "Courier New", monospace, Menlo, Monaco, Consolas, "Courier New", monospace;
+            padding: 10px 0px 6px 17px;
+            background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;
+            font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
             font-size: 14px;
-        }
+            overflow-x: auto;
+            line-height: 17.234px;
+            }
 
         .eoOutputWrapper {
             width: calc(90vw - 10px) !important;
@@ -200,7 +202,7 @@
         </div>
     </header>
 
-    <nav class="navigation" id="navigation"><img src="" class="mb-4 d-xl-none" alt="logo" /></nav>
+    <nav class="navigation" id="navigation"></nav>
 
     <div class="nav-overlay d-xl-none"></div>
 
@@ -297,7 +299,7 @@
                                                                 style="color: #008013;">% Ángulo theta que varía linealmente</span></span></div>
                                                 </div>
                                                 <div class="inlineWrapper">
-                                                    <div class='S7'><span style="white-space: pre"><span>z = t; </span><span style="color: #008013;">% Posición en el eje Z</span></span></div>
+                                                    <div class='S6'><span style="white-space: pre"><span>z = t; </span><span style="color: #008013;">% Posición en el eje Z</span></span></div>
                                                 </div>
                                             </div>
                                             <h2 class='S4'><span>Cálculo de Coordenadas en el Espacio 3D</span></h2>
@@ -308,7 +310,7 @@
                                                                 style="color: #008013;">% Coordenada X</span></span></div>
                                                 </div>
                                                 <div class="inlineWrapper">
-                                                    <div class='S7'><span style="white-space: pre"><span>y = r .* sin(th); </span><span
+                                                    <div class='S6'><span style="white-space: pre"><span>y = r .* sin(th); </span><span
                                                                 style="color: #008013;">% Coordenada Y</span></span></div>
                                                 </div>
                                             </div>
@@ -322,7 +324,7 @@
                                                 <div class="inlineWrapper outputs">
                                                     <div class='S8'><span style="white-space: pre"><span>hold </span><span
                                                                 style="color: #a709f5;">on</span><span>; </span><span style="color: #008013;">% Mantener la gráfica para añadir más elementos</span></span></div>
-                                                    <div class='S9'>
+                                                    <div class='S7 row m-1'>
                                                         <div class="inlineElement eoOutputWrapper disableDefaultGestureHandling embeddedOutputsFigure"
                                                             uid="55EB0879" prevent-scroll="true" data-testid="output_0" tabindex="-1"
                                                             style="width: 1147px;">
@@ -342,7 +344,7 @@
                                             </div>
                                             <h2 class='S4'><span>Agregar una Línea de Referencia y Etiquetas</span></h2>
                                             <div class='S1'><span>Añadimos una línea vertical en `(x=1, y=-0.5)` para destacar un punto de referencia. Luego, usamos la función `text` para etiquetar los puntos de inicio y final de la espiral.</span></div>
-                                            <div class="CodeBlock">
+                                            <div class="CodeBlock col-12">
                                                 <div class="inlineWrapper">
                                                     <div class='S5'><span style="white-space: pre"><span style="color: #008013;">% Línea de referencia en (x=1, y=-0.5)</span></span></div>
                                                 </div>
@@ -372,7 +374,7 @@
                                                 <div class="inlineWrapper outputs">
                                                     <div class='S8'><span style="white-space: pre"><span>text(x(n), y(n), z(n) + 2, </span><span
                                                                 style="color: #a709f5;">'B'</span><span>);</span></span></div>
-                                                    <div class='S9'>
+                                                    <div class='S7 row m-1'>
                                                         <div class="inlineElement eoOutputWrapper disableDefaultGestureHandling embeddedOutputsFigure"
                                                             uid="291937E5" prevent-scroll="true" data-testid="output_1" tabindex="-1"
                                                             style="width: 1147px;">
@@ -407,7 +409,7 @@
                                                 </div>
                                                 <div class="inlineWrapper outputs">
                                                     <div class='S8'><span style="white-space: pre"><span>title(</span><span style="color: #a709f5;">'Espiral en 3D con Radio Exponencialmente Decreciente'</span><span>);</span></span></div>
-                                                    <div class='S9'>
+                                                    <div class='S7 row m-1'>
                                                         <div class="inlineElement eoOutputWrapper disableDefaultGestureHandling embeddedOutputsFigure"
                                                             uid="FC5BB71C" prevent-scroll="true" data-testid="output_2" tabindex="-1"
                                                             style="width: 1147px;">
@@ -512,13 +514,13 @@
                                             </div>
                                         </a>
                                         <div class="divider d-none d-md-block"></div>
-                                        <a href="../signal5/index.html" class="article-card right col-5">
+                                        <a href="../signal5/index.html" class="article-card right ">
                                             <div class="">
                                                 <i class="fa-solid fa-wave-square"></i>
                                                 <h5 class="fw-medium">Cara Simple</h5>
                                             </div>
                                             <button>
-                                                <i class="fa-solid fa-arrow-right"></i>
+                                                <i class="fa-solid fa-arrow-right col-5"></i>
                                             </button>
                                         </a>
                                     </div>

@@ -63,8 +63,15 @@
         .CodeBlock {
             background-color: #F5F5F5;
             margin: 10px 15px 10px 0;
-            display: inline-block
-        }
+            display: inline-block;
+
+            width: 100%; /* Asegura que ocupe todo el ancho disponible */
+            max-width: 100%; /* No excederá el contenedor */
+            padding: 10px;
+            box-sizing: border-box; /* Incluye padding y borde en el cálculo del ancho */
+            overflow: auto; /* Muestra una barra de desplazamiento si el contenido es más grande */
+            min-height: auto; /* Ajusta la altura según sea necesario, o usa min-height para un tamaño dinámico */
+            }
 
         .S2 {
             border-left: 1px solid rgb(217, 217, 217);
@@ -150,9 +157,9 @@
             background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;
             font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
             font-size: 14px;
-            overflow-x: hidden;
+            overflow-x: auto;
             line-height: 17.234px;
-        }
+            }
     </style>
 
 </head>
@@ -317,7 +324,7 @@
                                                 </div>
                                                 <div class="inlineWrapper outputs">
                                                     <div class='S6'><span style="white-space: pre"><span>grid</span><span style="color: #a709f5;"> on</span></span></div>
-                                                    <div class='S7'>
+                                                    <div class='S7 row m-1'>
                                                         <div class="inlineElement eoOutputWrapper disableDefaultGestureHandling embeddedOutputsFigure"
                                                             uid="6E03B59E" prevent-scroll="true" data-testid="output_0"
                                                             style="width: 1147px;" tabindex="-1">
@@ -359,13 +366,13 @@
                                             </div>
                                         </a>
                                         <div class="divider d-none d-md-block"></div>
-                                        <a href="../signal3/index.html" class="article-card right col-5">
+                                        <a href="../signal3/index.html" class="article-card right ">
                                             <div class="">
                                                 <i class="fa-solid fa-wave-square"></i>
                                                 <h5 class="fw-medium">Grafica de malla</h5>
                                             </div>
                                             <button>
-                                                <i class="fa-solid fa-arrow-right"></i>
+                                                <i class="fa-solid fa-arrow-right col-5"></i>
                                             </button>
                                         </a>
                                     </div>
