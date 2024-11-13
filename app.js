@@ -16,4 +16,4 @@ const cargarNavbar = (url) => {
         });
 }
 
-cargarNavbar("/pages/partials/navbar.html")
+cargarNavbar("/analysis-signals/pages/partials/navbar.html")
